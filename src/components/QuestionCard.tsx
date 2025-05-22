@@ -8,6 +8,8 @@ interface QuestionCardProps {
   onSelectOption: (optionIndex: number) => void;
   onNext: () => void;
   isLastQuestion: boolean;
+  showFeedback: boolean;
+  isCorrectAnswer: boolean | null;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -15,15 +17,41 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   selectedOption,
   onSelectOption,
   onNext,
-  isLastQuestion
+  isLastQuestion,
+  showFeedback,
+  isCorrectAnswer
 }) => {
   const optionLabels = ['A', 'B', 'C', 'D'];
-  const optionColors = [
-    'bg-quiz-magenta hover:bg-quiz-magenta/90',
-    'bg-quiz-cyan hover:bg-quiz-cyan/90', 
-    'bg-quiz-navy hover:bg-quiz-navy/90',
-    'bg-quiz-yellow hover:bg-quiz-yellow/90'
-  ];
+
+  const getOptionButtonStyle = (index: number) => {
+    const isSelected = selectedOption === index;
+    
+    // Base styles for all buttons
+    let buttonStyle = `
+      bg-white text-quiz-navy p-6 rounded-xl text-lg font-semibold
+      transition-all duration-200 ease-out
+      flex items-center justify-start gap-4
+      min-h-[80px] md:min-h-[100px]
+      border-2 shadow-lg hover:shadow-xl
+      ${isSelected ? 'ring-4 ring-quiz-navy/30 scale-105' : 'hover:scale-102 border-gray-200'}
+    `;
+    
+    // Add feedback colors when showing feedback
+    if (showFeedback && isSelected) {
+      if (isCorrectAnswer) {
+        buttonStyle += ' border-green-500 bg-green-100';
+      } else {
+        buttonStyle += ' border-red-500 bg-red-100';
+      }
+      
+      // If this is the correct answer but not selected
+      if (index === question.correctAnswer && !isSelected) {
+        buttonStyle += ' border-green-500 bg-green-50';
+      }
+    }
+    
+    return buttonStyle;
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto animate-fade-in">
@@ -40,18 +68,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         {question.options.map((option, index) => (
           <button
             key={index}
-            onClick={() => onSelectOption(index)}
-            className={`
-              ${optionColors[index]}
-              ${selectedOption === index ? 'ring-4 ring-quiz-navy/30 scale-105' : 'hover:scale-102'}
-              text-white p-6 rounded-xl text-lg font-semibold
-              transition-all duration-200 ease-out
-              flex items-center justify-start gap-4
-              min-h-[80px] md:min-h-[100px]
-              shadow-lg hover:shadow-xl
-            `}
+            onClick={() => !showFeedback && onSelectOption(index)}
+            disabled={showFeedback}
+            className={getOptionButtonStyle(index)}
           >
-            <span className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center font-bold">
+            <span className={`bg-quiz-${index === 0 ? 'magenta' : index === 1 ? 'cyan' : index === 2 ? 'navy' : 'yellow'} text-white rounded-full w-10 h-10 flex items-center justify-center font-bold`}>
               {optionLabels[index]}
             </span>
             <span className="text-left flex-1">{option}</span>
@@ -71,7 +92,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
             }
           `}
         >
-          {isLastQuestion ? 'Befejezés' : 'Következő'}
+          {isLastQuestion ? 'Befejezés' : showFeedback ? 'Következő' : 'Ellenőrzés'}
         </button>
       </div>
     </div>

@@ -12,6 +12,8 @@ const QuizApp: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showResults, setShowResults] = useState(false);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | null>(null);
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
@@ -23,33 +25,43 @@ const QuizApp: React.FC = () => {
   const handleNext = () => {
     if (selectedOption === null) return;
 
-    const isCorrect = selectedOption === currentQuestion.correctAnswer;
-    const userAnswer: UserAnswer = {
-      questionId: currentQuestion.id,
-      selectedOption,
-      isCorrect
-    };
-
-    const newUserAnswers = [...userAnswers, userAnswer];
-    setUserAnswers(newUserAnswers);
-
-    if (isLastQuestion) {
-      // Calculate final results
-      const score = newUserAnswers.filter(answer => answer.isCorrect).length;
-      const percentage = Math.round((score / quizQuestions.length) * 100);
-      
-      const result: QuizResult = {
-        score,
-        totalQuestions: quizQuestions.length,
-        percentage,
-        answers: newUserAnswers
+    // If we're showing feedback, move to the next question
+    if (showFeedback) {
+      const isCorrect = selectedOption === currentQuestion.correctAnswer;
+      const userAnswer: UserAnswer = {
+        questionId: currentQuestion.id,
+        selectedOption,
+        isCorrect
       };
 
-      setQuizResult(result);
-      setShowResults(true);
+      const newUserAnswers = [...userAnswers, userAnswer];
+      setUserAnswers(newUserAnswers);
+
+      if (isLastQuestion) {
+        // Calculate final results
+        const score = newUserAnswers.filter(answer => answer.isCorrect).length;
+        const percentage = Math.round((score / quizQuestions.length) * 100);
+        
+        const result: QuizResult = {
+          score,
+          totalQuestions: quizQuestions.length,
+          percentage,
+          answers: newUserAnswers
+        };
+
+        setQuizResult(result);
+        setShowResults(true);
+      } else {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedOption(null);
+        setShowFeedback(false);
+        setIsCorrectAnswer(null);
+      }
     } else {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOption(null);
+      // Show feedback for the selected answer
+      const isCorrect = selectedOption === currentQuestion.correctAnswer;
+      setIsCorrectAnswer(isCorrect);
+      setShowFeedback(true);
     }
   };
 
@@ -59,6 +71,8 @@ const QuizApp: React.FC = () => {
     setSelectedOption(null);
     setShowResults(false);
     setQuizResult(null);
+    setShowFeedback(false);
+    setIsCorrectAnswer(null);
   };
 
   if (showResults && quizResult) {
@@ -92,6 +106,8 @@ const QuizApp: React.FC = () => {
           onSelectOption={handleSelectOption}
           onNext={handleNext}
           isLastQuestion={isLastQuestion}
+          showFeedback={showFeedback}
+          isCorrectAnswer={isCorrectAnswer}
         />
       </div>
     </div>
