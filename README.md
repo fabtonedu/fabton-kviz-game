@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
 
-## Project info
+Üdvözlünk a Fabton Kvíz Projektben! 😊
+Ezt a projektet a Fabton robotika csapat készítette, hogy támogatást gyüjtsön a Sydney Open FLL versenyre való kijutáshoz. 
 
-**URL**: https://lovable.dev/projects/748e6513-b723-4091-87d9-c99674310255
 
-## How can I edit this code?
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Mi ez az egész?
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/748e6513-b723-4091-87d9-c99674310255) and start prompting.
+Ez egy egyszerű, de szórakoztató webes kvíz az innvoációs projektünk és Sydney kapcsán, próbálhatod ki a tudásod. A célunk, hogy a kvíz segítségével másokat is inspiráljunk, és megmutassuk, mennyi energiát és szeretetet tettünk bele.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Főbb jellemzők
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Azonnali visszajelzés a helyes válaszokról
+- Egyszerű és szép felület, amit bárki használhat
+- Könnyen bővíthető új kérdésekkel
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Hogyan használhatod?
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Klónozd a projektet vagy töltsd le.
+2. Telepítsd a szükséges csomagokat (`npm install`).
+3. Indítsd el az alkalmazást (`npm start`).
+4. Játssz és tanulj közben!
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Segíts nekünk!
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Ha teheted szívesen fogadunk bármilyen támogatást vagy visszajelzést. A támogatásod sokat jelentene nekünk, hogy sikeresen szerepelhessünk a Sydney Open FLL versenyen!
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Kapcsolat
 
-**Use GitHub Codespaces**
+Ha bármi kérdésed vagy ötleted van, írj nekünk bátran!
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+Köszönjük, hogy benéztél, és sok sikert a kvízhez! 🎉
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/748e6513-b723-4091-87d9-c99674310255) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Fabton csapat
