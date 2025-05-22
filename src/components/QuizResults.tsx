@@ -72,8 +72,23 @@ const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
   const circlePercentage = (result.percentage / 100) * 283; // 283 is approximately 2π * 45 (radius)
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto animate-scale-in">
-      <div className="text-center mb-8">
+    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto animate-scale-in relative overflow-hidden">
+      {/* Decorative magenta shape - top right */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-quiz-magenta opacity-10"></div>
+      
+      {/* Decorative magenta shape - bottom left */}
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-quiz-magenta opacity-10"></div>
+      
+      <div className="text-center mb-8 relative">
+        {/* Fabiton Logo */}
+        <div className="flex justify-center mb-4">
+          <img 
+            src="/lovable-uploads/c57841ac-f5d1-4517-a160-d261c1b9c9c0.png" 
+            alt="Fabiton Logo" 
+            className="h-12 md:h-16"
+          />
+        </div>
+        
         <h2 className="text-3xl md:text-4xl font-bold text-quiz-navy mb-4">
           Kvíz Befejezve!
         </h2>
@@ -124,7 +139,10 @@ const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
       </div>
 
       {/* Score Breakdown */}
-      <div className="bg-gradient-to-r from-quiz-magenta/10 to-quiz-cyan/10 rounded-xl p-6 mb-8">
+      <div className="bg-gradient-to-r from-quiz-magenta/10 to-quiz-cyan/10 rounded-xl p-6 mb-8 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-quiz-yellow opacity-10 rounded-full transform translate-x-10 translate-y-2"></div>
+        
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>
             <div className="text-2xl font-bold text-quiz-magenta">
@@ -142,11 +160,15 @@ const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
       </div>
       
       {/* Support Message */}
-      <div className="bg-blue-50 rounded-xl p-4 mb-6 text-center border border-blue-100">
-        <p className="text-quiz-navy">
+      <div className="bg-blue-50 rounded-xl p-4 mb-6 text-center border border-blue-100 relative overflow-hidden">
+        {/* Shape decorations */}
+        <div className="absolute -left-6 -bottom-6 w-12 h-12 bg-quiz-cyan opacity-10 rounded-full"></div>
+        <div className="absolute -right-2 -top-2 w-8 h-8 bg-quiz-magenta opacity-10 rounded-full"></div>
+        
+        <p className="text-quiz-navy relative z-10">
           Ha tetszett ez a kvíz, és szeretnél segíteni abban, hogy csapatunk kijusson a sydney-i döntőre, támogass minket lehetőségeid szerint.
         </p>
-        <p className="text-quiz-navy font-semibold mt-2">
+        <p className="text-quiz-navy font-semibold mt-2 relative z-10">
           Mi pedig szívből hálásak vagyunk – és leszünk! 💙
         </p>
       </div>
