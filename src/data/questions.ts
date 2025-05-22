@@ -57,5 +57,34 @@ export const quizQuestions: Question[] = [
     options: ["Brooklyn híd", "Golden Gate híd", "Sydney Harbour Bridge"],
     correctAnswer: 2,
     category: "Sydney"
+  },
+  // New questions about the Fabton team
+  {
+    id: 9,
+    question: "Honnan jutottak ki Sydney-be a Fabton diákjai?",
+    options: ["Brassóból", "Zalaegerszegről", "Csíkcsomortánból"],
+    correctAnswer: 1,
+    category: "A Fabton Csapat"
+  },
+  {
+    id: 10,
+    question: "Milyen versenyen vesz részt a Fabton csapata?",
+    options: ["First Lego League", "Csíki községek robotikaversenye", "RoboCup"],
+    correctAnswer: 0,
+    category: "A Fabton Csapat"
+  },
+  {
+    id: 11,
+    question: "Melyik nemzetközi versenyen szerepeltek a Fabton csapat tagjai tavaly nyáron?",
+    options: ["Hong Kong Asia Open", "Csíkkozmás European Open", "Fokváros Africa Open"],
+    correctAnswer: 0,
+    category: "A Fabton Csapat"
+  },
+  {
+    id: 12,
+    question: "Mi a First Lego League idei témája?",
+    options: ["Submarged", "Masterpiece", "Unearthed"],
+    correctAnswer: 0,
+    category: "A Fabton Csapat"
   }
 ];
