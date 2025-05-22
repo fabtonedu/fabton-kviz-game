@@ -7,7 +7,7 @@ const Index = () => {
       {/* Logo at the top */}
       <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
         <img 
-          src="/lovable-uploads/c57841ac-f5d1-4517-a160-d261c1b9c9c0.png" 
+          src="/src/c57841ac-f5d1-4517-a160-d261c1b9c9c0.png" 
           alt="Fabiton Logo" 
           className="h-10 md:h-12" 
         />
@@ -21,7 +21,7 @@ const Index = () => {
       {/* Purple shape top right */}
       <div className="absolute -top-20 -right-20 w-64 h-64">
         <img 
-          src="/lovable-uploads/ce24efc0-6edd-4d7d-97ab-6a3fe81bd8ed.png" 
+          src="/src/ce24efc0-6edd-4d7d-97ab-6a3fe81bd8ed.png" 
           alt="Purple Shape" 
           className="w-full h-full opacity-10" 
         />
@@ -30,7 +30,7 @@ const Index = () => {
       {/* Purple shape bottom left */}
       <div className="absolute -bottom-20 -left-20 w-64 h-64">
         <img 
-          src="/lovable-uploads/4d4a2f2b-abcf-4f76-9293-cedf55f7af8b.png" 
+          src="/src/4d4a2f2b-abcf-4f76-9293-cedf55f7af8b.png" 
           alt="Purple Shape" 
           className="w-full h-full opacity-10" 
         />
