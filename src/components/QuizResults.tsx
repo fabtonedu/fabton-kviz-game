@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { QuizResult } from '@/types/quiz';
+import confetti from 'canvas-confetti';
 
 interface QuizResultsProps {
   result: QuizResult;
@@ -8,6 +9,50 @@ interface QuizResultsProps {
 }
 
 const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
+  useEffect(() => {
+    // Trigger confetti when component mounts
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+
+    const randomInRange = (min: number, max: number) => {
+      return Math.random() * (max - min) + min;
+    };
+
+    const confettiInterval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+      
+      if (timeLeft <= 0) {
+        return clearInterval(confettiInterval);
+      }
+      
+      // Since we want to make it celebratory, add various colors and shapes
+      confetti({
+        particleCount: 3,
+        startVelocity: 0,
+        ticks: 200,
+        origin: {
+          x: Math.random(),
+          y: Math.random() - 0.2
+        },
+        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
+        shapes: ['circle', 'square'],
+        gravity: randomInRange(0.4, 0.6),
+        scalar: randomInRange(0.8, 1.2),
+        drift: randomInRange(-0.4, 0.4)
+      });
+    }, 250);
+
+    // Run bigger burst immediately
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+
+    // Cleanup the interval
+    return () => clearInterval(confettiInterval);
+  }, []);
+
   const getScoreColor = (percentage: number) => {
     if (percentage >= 80) return 'text-green-600';
     if (percentage >= 60) return 'text-quiz-cyan';
@@ -72,6 +117,10 @@ const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
         <p className="text-lg text-gray-600 mb-6">
           {result.score} helyes válasz {result.totalQuestions} kérdésből
         </p>
+        
+        <p className="text-lg text-quiz-navy mb-6">
+          🎉 Szuper válaszok, ügyes voltál!
+        </p>
       </div>
 
       {/* Score Breakdown */}
@@ -90,6 +139,16 @@ const QuizResults: React.FC<QuizResultsProps> = ({ result, onRestart }) => {
             <div className="text-sm text-gray-600">Hibás</div>
           </div>
         </div>
+      </div>
+      
+      {/* Support Message */}
+      <div className="bg-blue-50 rounded-xl p-4 mb-6 text-center border border-blue-100">
+        <p className="text-quiz-navy">
+          Ha tetszett ez a kvíz, és szeretnél segíteni abban, hogy csapatunk kijusson a sydney-i döntőre, támogass minket lehetőségeid szerint.
+        </p>
+        <p className="text-quiz-navy font-semibold mt-2">
+          Mi pedig szívből hálásak vagyunk – és leszünk! 💙
+        </p>
       </div>
 
       <div className="flex justify-center">
