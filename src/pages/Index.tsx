@@ -21,7 +21,7 @@ const Index = () => {
       {/* Purple shape top right */}
       <div className="absolute -top-20 -right-20 w-64 h-64">
         <img 
-          src="/ce24efc0-6edd-4d7d-97ab-6a3fe81bd8ed.png" 
+          src="/ce24efc0-6edd-4d7d-97ab-6a3fe81bd8ed.png"
           alt="Purple Shape" 
           className="w-full h-full opacity-10" 
         />
@@ -30,7 +30,7 @@ const Index = () => {
       {/* Purple shape bottom left */}
       <div className="absolute -bottom-20 -left-20 w-64 h-64">
         <img 
-          src="/4d4a2f2b-abcf-4f76-9293-cedf55f7af8b.png" 
+          src="/4d4a2f2b-abcf-4f76-9293-cedf55f7af8b.png"
           alt="Purple Shape" 
           className="w-full h-full opacity-10" 
         />
