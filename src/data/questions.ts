@@ -4,86 +4,58 @@ import { Question } from '@/types/quiz';
 export const quizQuestions: Question[] = [
   {
     id: 1,
-    question: "Melyik bolygó a Naprendszer legnagyobb bolygója?",
-    options: ["Mars", "Jupiter", "Szaturnusz", "Neptunusz"],
+    question: "Milyen problémára keres megoldást a projektünk?",
+    options: ["A medvék megjelenésére", "A tó vizének romlására", "A tóban élő védett halfaj veszélyeztetésére"],
     correctAnswer: 1,
-    category: "Természettudomány"
+    category: "Innováció"
   },
   {
     id: 2,
-    question: "Ki írta a 'Romeo és Júlia' című drámát?",
-    options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
-    correctAnswer: 1,
-    category: "Irodalom"
+    question: "Mit terveztünk a probléma megoldására?",
+    options: ["Egy speciális vegyszert, ami elpusztítja az algákat", "Egy légi drónt, ami a magasból figyeli a tavat", "Egy víz alatti robotot (ROV), amely felderíti a tó vizét"],
+    correctAnswer: 2,
+    category: "Innováció"
   },
   {
     id: 3,
-    question: "Melyik ország fővárosa Budapest?",
-    options: ["Románia", "Csehország", "Magyarország", "Szlovákia"],
-    correctAnswer: 2,
-    category: "Földrajz"
+    question: "Mi lesz a víz alatti robot neve?",
+    options: ["Algadestroyer 2000", "Anna V2.0", "Sanyi"],
+    correctAnswer: 1,
+    category: "Innováció"
   },
   {
     id: 4,
-    question: "Mennyi 15 × 8?",
-    options: ["110", "120", "130", "140"],
-    correctAnswer: 1,
-    category: "Matematika"
+    question: "Milyen technológiával készül a robot?",
+    options: ["Fa faragással", "Acélöntéssel", "3D nyomtatással"],
+    correctAnswer: 2,
+    category: "Innováció"
   },
   {
     id: 5,
-    question: "Melyik elem vegyjele O?",
-    options: ["Oxigén", "Ózon", "Olaj", "Opál"],
-    correctAnswer: 0,
-    category: "Kémia"
+    question: "Mi Sydney egyik legismertebb látványossága?",
+    options: ["Eiffel-torony", "Kínai Nagy Fal", "Sydney Operaház"],
+    correctAnswer: 2,
+    category: "Sydney"
   },
   {
     id: 6,
-    question: "Mikor kezdődött a második világháború?",
-    options: ["1938", "1939", "1940", "1941"],
+    question: "Ki tervezte a Sydney-i Operaházat?",
+    options: ["Frank Lloyd Wright", "Jørn Utzon", "Zaha Hadid"],
     correctAnswer: 1,
-    category: "Történelem"
+    category: "Sydney"
   },
   {
     id: 7,
-    question: "Melyik művész festette a 'Csillagos éj' című képet?",
-    options: ["Pablo Picasso", "Claude Monet", "Vincent van Gogh", "Leonardo da Vinci"],
+    question: "Sydney melyik ausztrál állam fővárosa?",
+    options: ["Victoria", "Queensland", "Új-Dél-Wales (New South Wales)"],
     correctAnswer: 2,
-    category: "Művészet"
+    category: "Sydney"
   },
   {
     id: 8,
-    question: "Melyik kontinens a legnagyobb?",
-    options: ["Afrika", "Ázsia", "Észak-Amerika", "Európa"],
-    correctAnswer: 1,
-    category: "Földrajz"
-  },
-  {
-    id: 9,
-    question: "Mi az emberi test legnagyobb szerve?",
-    options: ["Máj", "Tüdő", "Bőr", "Szív"],
+    question: "Mi a neve Sydney leghíresebb hídjának, amelyet gyakran \"a fogas hídnak\" is neveznek?",
+    options: ["Brooklyn híd", "Golden Gate híd", "Sydney Harbour Bridge"],
     correctAnswer: 2,
-    category: "Biológia"
-  },
-  {
-    id: 10,
-    question: "Melyik programozási nyelv kezdőbarát?",
-    options: ["Assembly", "Python", "C++", "Machine Code"],
-    correctAnswer: 1,
-    category: "Informatika"
-  },
-  {
-    id: 11,
-    question: "Hány perc van egy órában?",
-    options: ["50", "60", "70", "80"],
-    correctAnswer: 1,
-    category: "Alapismeretek"
-  },
-  {
-    id: 12,
-    question: "Melyik a leggyorsabb állat a világon?",
-    options: ["Gepárd", "Sólyom", "Antilop", "Zsiráf"],
-    correctAnswer: 0,
-    category: "Biológia"
+    category: "Sydney"
   }
 ];

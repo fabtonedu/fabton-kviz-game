@@ -77,21 +77,24 @@ const QuizApp: React.FC = () => {
 
   if (showResults && quizResult) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-quiz-cyan/20 via-quiz-magenta/10 to-quiz-yellow/20 p-4 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-quiz-cyan/20 via-quiz-magenta/10 to-quiz-yellow/20 p-4 flex items-center justify-center relative">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-quiz-yellow opacity-20 blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-quiz-cyan opacity-20 blur-xl"></div>
         <QuizResults result={quizResult} onRestart={handleRestart} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-quiz-cyan/20 via-quiz-magenta/10 to-quiz-yellow/20 p-4">
+    <div className="min-h-screen p-4 relative">
       <div className="max-w-6xl mx-auto py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-quiz-navy mb-4">
-            Interaktív Kvíz
+            Tudásteszt
           </h1>
           <p className="text-lg text-gray-600">
-            Teszteld a tudásodat 12 érdekes kérdéssel!
+            Teszteld a tudásodat a különböző témákban!
           </p>
         </div>
 

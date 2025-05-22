@@ -21,7 +21,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   showFeedback,
   isCorrectAnswer
 }) => {
-  const optionLabels = ['A', 'B', 'C', 'D'];
+  const optionLabels = ['A', 'B', 'C'];
 
   const getOptionButtonStyle = (index: number) => {
     const isSelected = selectedOption === index;
@@ -64,7 +64,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-1 gap-4 mb-8">
         {question.options.map((option, index) => (
           <button
             key={index}
@@ -72,7 +72,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
             disabled={showFeedback}
             className={getOptionButtonStyle(index)}
           >
-            <span className={`bg-quiz-${index === 0 ? 'magenta' : index === 1 ? 'cyan' : index === 2 ? 'navy' : 'yellow'} text-white rounded-full w-10 h-10 flex items-center justify-center font-bold`}>
+            <span className={`bg-quiz-${index === 0 ? 'magenta' : index === 1 ? 'cyan' : 'navy'} text-white rounded-full w-10 h-10 flex items-center justify-center font-bold`}>
               {optionLabels[index]}
             </span>
             <span className="text-left flex-1">{option}</span>
