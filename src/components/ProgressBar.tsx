@@ -13,7 +13,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
     <div className="w-full mb-8 relative">
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center">
-          <div className="bg-gradient-to-r from-quiz-magenta to-quiz-cyan rounded-full w-10 h-10 flex items-center justify-center text-white font-semibold mr-2 shadow-lg">
+          <div className="bg-quiz-yellow rounded-full w-10 h-10 flex items-center justify-center text-white font-semibold mr-2 shadow-lg">
             {current}
           </div>
           <span className="text-sm font-medium text-quiz-navy">
@@ -29,7 +29,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
       
       <div className="w-full bg-white rounded-full h-6 overflow-hidden shadow-inner p-1">
         <div 
-          className="h-full bg-gradient-to-r from-quiz-magenta via-quiz-cyan to-quiz-yellow rounded-full transition-all duration-500 ease-out shadow-lg"
+          className="h-full bg-quiz-yellow rounded-full transition-all duration-500 ease-out shadow-lg"
           style={{ width: `${percentage}%` }}
         />
       </div>
