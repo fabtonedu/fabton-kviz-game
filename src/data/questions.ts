@@ -53,7 +53,7 @@ export const quizQuestions: Question[] = [
   },
   {
     id: 8,
-    question: "Mi a neve Sydney híres hídjának, amelyet gyakran „a fogas hídnak" is neveznek?",
+    question: "Mi a neve Sydney híres hídjának, amelyet gyakran \"a fogas hídnak\" is neveznek?",
     options: ["Sydney Harbour Bridge", "Port Jackson Link", "Tasman Crossing"],
     correctAnswer: 0,
     category: "Sydney"
